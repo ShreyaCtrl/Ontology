@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ex="http://example.org/schema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <!-- Define classes -->
+  <rdf:Description rdf:about="http://example.org/schema#Book">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Book</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/schema#Author">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Author</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/schema#Publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Publisher</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/schema#Genre">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Genre</rdfs:label>
+  </rdf:Description>
+
+  <!-- Book 1 -->
+  <rdf:Description rdf:about="http://example.org/book#book1">
+    <rdf:type rdf:resource="http://example.org/schema#Book"/>
+    <dc:title>The Great Gatsby</dc:title>
+    <ex:hasAuthor rdf:resource="http://example.org/author#FScottFitzgerald"/>
+    <ex:hasPublisher rdf:resource="http://example.org/publisher#Scribner"/>
+    <ex:hasGenre rdf:resource="http://example.org/genre#Fiction"/>
+    <ex:publicationYear>1925</ex:publicationYear>
+    <ex:isbn>9780743273565</ex:isbn>
+  </rdf:Description>
+
+  <!-- Book 2 -->
+  <rdf:Description rdf:about="http://example.org/book#book2">
+    <rdf:type rdf:resource="http://example.org/schema#Book"/>
+    <dc:title>1984</dc:title>
+    <ex:hasAuthor rdf:resource="http://example.org/author#GeorgeOrwell"/>
+    <ex:hasPublisher rdf:resource="http://example.org/publisher#SeckerWarburg"/>
+    <ex:hasGenre rdf:resource="http://example.org/genre#Dystopian"/>
+    <ex:publicationYear>1949</ex:publicationYear>
+    <ex:isbn>9780451524935</ex:isbn>
+  </rdf:Description>
+
+  <!-- Book 3 -->
+  <rdf:Description rdf:about="http://example.org/book#book3">
+    <rdf:type rdf:resource="http://example.org/schema#Book"/>
+    <dc:title>To Kill a Mockingbird</dc:title>
+    <ex:hasAuthor rdf:resource="http://example.org/author#HarperLee"/>
+    <ex:hasPublisher rdf:resource="http://example.org/publisher#Lippincott"/>
+    <ex:hasGenre rdf:resource="http://example.org/genre#HistoricalFiction"/>
+    <ex:publicationYear>1960</ex:publicationYear>
+    <ex:isbn>9780061120084</ex:isbn>
+  </rdf:Description>
+
+  <!-- Publishers -->
+  <rdf:Description rdf:about="http://example.org/publisher#Scribner">
+    <rdf:type rdf:resource="http://example.org/schema#Publisher"/>
+    <rdfs:label>Scribner</rdfs:label>
+    <ex:location>New York, USA</ex:location>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/publisher#SeckerWarburg">
+    <rdf:type rdf:resource="http://example.org/schema#Publisher"/>
+    <rdfs:label>Secker  Warburg</rdfs:label>
+    <ex:location>London, UK</ex:location>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/publisher#Lippincott">
+    <rdf:type rdf:resource="http://example.org/schema#Publisher"/>
+    <rdfs:label>J.B. Lippincott  Co.</rdfs:label>
+    <ex:location>Philadelphia, USA</ex:location>
+  </rdf:Description>
+
+  <!-- Genres -->
+  <rdf:Description rdf:about="http://example.org/genre#Fiction">
+    <rdf:type rdf:resource="http://example.org/schema#Genre"/>
+    <rdfs:label>Fiction</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/genre#Dystopian">
+    <rdf:type rdf:resource="http://example.org/schema#Genre"/>
+    <rdfs:label>Dystopian</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/genre#HistoricalFiction">
+    <rdf:type rdf:resource="http://example.org/schema#Genre"/>
+    <rdfs:label>Historical Fiction</rdfs:label>
+  </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ex="http://example.org/schema#">
+
+  <!-- Define Author Class -->
+  <rdf:Description rdf:about="http://example.org/schema#Author">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Author</rdfs:label>
+  </rdf:Description>
+
+  <!-- Define Country Class -->
+  <rdf:Description rdf:about="http://example.org/schema#Country">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Country</rdfs:label>
+  </rdf:Description>
+
+  <!-- Define Work Class -->
+  <rdf:Description rdf:about="http://example.org/schema#Work">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Work</rdfs:label>
+  </rdf:Description>
+
+  <!-- Author 1: F. Scott Fitzgerald -->
+  <rdf:Description rdf:about="http://example.org/author#FScottFitzgerald">
+    <rdf:type rdf:resource="http://example.org/schema#Author"/>
+    <ex:fullName>Francis Scott Key Fitzgerald</ex:fullName>
+    <ex:birthYear>1896</ex:birthYear>
+    <ex:deathYear>1940</ex:deathYear>
+    <ex:nationality rdf:resource="http://example.org/country#USA"/>
+    <ex:authorOf rdf:resource="http://example.org/book#book1"/>
+    <ex:notableWork>The Great Gatsby</ex:notableWork>
+  </rdf:Description>
+
+  <!-- Author 2: George Orwell -->
+  <rdf:Description rdf:about="http://example.org/author#GeorgeOrwell">
+    <rdf:type rdf:resource="http://example.org/schema#Author"/>
+    <ex:fullName>Eric Arthur Blair</ex:fullName>
+    <ex:birthYear>1903</ex:birthYear>
+    <ex:deathYear>1950</ex:deathYear>
+    <ex:nationality rdf:resource="http://example.org/country#UK"/>
+    <ex:authorOf rdf:resource="http://example.org/book#book2"/>
+    <ex:notableWork>1984</ex:notableWork>
+  </rdf:Description>
+
+  <!-- Author 3: Harper Lee -->
+  <rdf:Description rdf:about="http://example.org/author#HarperLee">
+    <rdf:type rdf:resource="http://example.org/schema#Author"/>
+    <ex:fullName>Nelle Harper Lee</ex:fullName>
+    <ex:birthYear>1926</ex:birthYear>
+    <ex:deathYear>2016</ex:deathYear>
+    <ex:nationality rdf:resource="http://example.org/country#USA"/>
+    <ex:authorOf rdf:resource="http://example.org/book#book3"/>
+    <ex:notableWork>To Kill a Mockingbird</ex:notableWork>
+  </rdf:Description>
+
+  <!-- Countries -->
+  <rdf:Description rdf:about="http://example.org/country#USA">
+    <rdf:type rdf:resource="http://example.org/schema#Country"/>
+    <rdfs:label>United States</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/country#UK">
+    <rdf:type rdf:resource="http://example.org/schema#Country"/>
+    <rdfs:label>United Kingdom</rdfs:label>
+  </rdf:Description>
+
+</rdf:RDF>

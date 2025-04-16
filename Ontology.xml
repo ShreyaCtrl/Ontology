@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ex="http://example.org/schema#">
+
+  <!-- Define the ontology -->
+  <owl:Ontology rdf:about="http://example.org/schema"/>
+
+  <!-- === CLASSES === -->
+  <owl:Class rdf:about="http://example.org/schema#Book"/>
+  <owl:Class rdf:about="http://example.org/schema#Author"/>
+  <owl:Class rdf:about="http://example.org/schema#Publisher"/>
+  <owl:Class rdf:about="http://example.org/schema#Genre"/>
+  <owl:Class rdf:about="http://example.org/schema#Country"/>
+  <owl:Class rdf:about="http://example.org/schema#Work"/>
+
+  <!-- === OBJECT PROPERTIES === -->
+  <owl:ObjectProperty rdf:about="http://example.org/schema#hasAuthor">
+    <rdfs:domain rdf:resource="http://example.org/schema#Book"/>
+    <rdfs:range rdf:resource="http://example.org/schema#Author"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/schema#hasPublisher">
+    <rdfs:domain rdf:resource="http://example.org/schema#Book"/>
+    <rdfs:range rdf:resource="http://example.org/schema#Publisher"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/schema#hasGenre">
+    <rdfs:domain rdf:resource="http://example.org/schema#Book"/>
+    <rdfs:range rdf:resource="http://example.org/schema#Genre"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/schema#hasCountry">
+    <rdfs:domain rdf:resource="http://example.org/schema#Author"/>
+    <rdfs:range rdf:resource="http://example.org/schema#Country"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/schema#authorOf">
+    <rdfs:domain rdf:resource="http://example.org/schema#Author"/>
+    <rdfs:range rdf:resource="http://example.org/schema#Book"/>
+    <owl:inverseOf rdf:resource="http://example.org/schema#hasAuthor"/>
+  </owl:ObjectProperty>
+
+  <!-- === DATATYPE PROPERTIES === -->
+  <owl:DatatypeProperty rdf:about="http://example.org/schema#title">
+    <rdfs:domain rdf:resource="http://example.org/schema#Book"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/schema#publicationYear">
+    <rdfs:domain rdf:resource="http://example.org/schema#Book"/>
+    <rdfs:range rdf:resource="xsd:gYear"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/schema#fullName">
+    <rdfs:domain rdf:resource="http://example.org/schema#Author"/>
+    <rdfs:range rdf:resource="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/schema#birthYear">
+    <rdfs:domain rdf:resource="http://example.org/schema#Author"/>
+    <rdfs:range rdf:resource="xsd:gYear"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/schema#deathYear">
+    <rdfs:domain rdf:resource="http://example.org/schema#Author"/>
+    <rdfs:range rdf:resource="xsd:gYear"/>
+  </owl:DatatypeProperty>
+
+  <!-- === LINKING DATASETS === -->
+  <!-- Book1 linked to Author1, Publisher1, and Genre1 -->
+  <rdf:Description rdf:about="http://example.org/books#Book1">
+    <ex:hasAuthor rdf:resource="http://example.org/authors#Author1"/>
+    <ex:hasPublisher rdf:resource="http://example.org/publishers#Publisher1"/>
+    <ex:hasGenre rdf:resource="http://example.org/genres#Fiction"/>
+  </rdf:Description>
+
+  <!-- Book2 linked to Author2, Publisher2, and Genre2 -->
+  <rdf:Description rdf:about="http://example.org/books#Book2">
+    <ex:hasAuthor rdf:resource="http://example.org/authors#Author2"/>
+    <ex:hasPublisher rdf:resource="http://example.org/publishers#Publisher2"/>
+    <ex:hasGenre rdf:resource="http://example.org/genres#Philosophy"/>
+  </rdf:Description>
+
+</rdf:RDF>
